@@ -6,9 +6,9 @@ services:
         container_name: nginx-proxy
         hostname: nginx-proxy
         volumes: 
-            - nginx:/etc/nginx/certs
-            - nginx:/etc/nginx/vhost.d
-            - nginx:/usr/share/nginx/html
+            - /etc/nginx/certs
+            - /etc/nginx/vhost.d
+            - /usr/share/nginx/html
             - /var/run/docker.sock:/tmp/docker.sock:ro
         ports:
             - 443:443
@@ -47,7 +47,4 @@ services:
 networks:
   proxy-net:
 
-volumes: 
-    nginx:
-    nginx-proxy:
-    
+   
